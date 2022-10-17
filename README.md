@@ -3,8 +3,7 @@ In this project I create a project using sockets (sockets.io) to create web mess
 
 ## ℹ️  GETTING STARTED
 ### PREREQUISITES 
-- Swift 4+
-- Xcode 10+
+- NodeJS 16.18.0+
 
 ### INSTALATION
 1. Open your terminal in location that you want save the project.
