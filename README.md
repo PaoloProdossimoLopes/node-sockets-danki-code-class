@@ -1,4 +1,4 @@
-# 🛰 Message (Using sockets)
+# 🛰 Sockets study
 In this project I create a project using sockets (sockets.io) to create web message application
 
 ## ℹ️  GETTING STARTED
