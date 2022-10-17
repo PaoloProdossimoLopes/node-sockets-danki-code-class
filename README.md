@@ -1,9 +1,5 @@
-#  TITLE
-DESCRIPTION ...
-
-## 🧰 Example:
-```swift
-```
+# 🛰 Message (Using sockets)
+In this project I create a project using sockets (sockets.io) to create web message application
 
 ## ℹ️  GETTING STARTED
 ### PREREQUISITES 
@@ -14,14 +10,21 @@ DESCRIPTION ...
 1. Open your terminal in location that you want save the project.
 2. Clone the repo in this local.
 ```sh
-git clone https://github.com/PaoloProdossimoLopes/repository-template.git
+git clone https://github.com/PaoloProdossimoLopes/node-newsletter-project.git
 ```
-3. Open the file with extension .xcodeproj inside the folder project.
+3. install dependencies using this commands
+```sh
+npm install express
+npm install ejs
+npm install body-parser
+npm install mongoose
+```
    
 ### RUN
 So that you can run the project follow this steps:
-1. Choose a simulator 
-2. Then click on the **COMMAND + R** keys or press the ▶︎ (icon at the top of the IDE).
+1. Open your terminal
+2. Navigate to inside at `application` folder from terminal
+2. run `node server.js` or using `nodemon server.js`
 
 
 ## 📃 License:
