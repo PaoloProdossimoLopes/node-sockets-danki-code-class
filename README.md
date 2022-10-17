@@ -10,14 +10,12 @@ In this project I create a project using sockets (sockets.io) to create web mess
 1. Open your terminal in location that you want save the project.
 2. Clone the repo in this local.
 ```sh
-git clone https://github.com/PaoloProdossimoLopes/node-newsletter-project.git
+git clone https://github.com/PaoloProdossimoLopes/node-sockets-danki-code-class.git
 ```
 3. install dependencies using this commands
 ```sh
 npm install express
-npm install ejs
-npm install body-parser
-npm install mongoose
+npm install socket.io
 ```
    
 ### RUN
