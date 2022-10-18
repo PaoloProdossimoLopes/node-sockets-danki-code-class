@@ -11,7 +11,7 @@
 
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages > li { padding: 0.5rem 1rem; }
-      #messages > li:nth-child(odd) { background: #efefef; }
+      #messages > li { background: #efefef; }
     </style>
 
   </head>
@@ -24,11 +24,44 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
-        socket.on('conectado', function(msg) {
-            console.log(msg);
+
+        const nome = prompt('Qual o seu nome? ');
+        socket.emit('new-user', nome);
+        socket.on('new-user', (data) => {
+          	if (data.success) {
+              alert('Bem vindo ao chat ' + nome);
+            } else {
+              alert('Ja possui um usuario com esse nome...')
+              window.location.href = '/'
+            }
         });
-        socket.on('novo usuario', function(msg) {
-            console.log(msg);
+
+       
+
+        const messages = document.getElementById('messages');
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (input.value) {
+                socket.emit('chat-message', {
+                    msg: input.value,
+                    nome: nome
+                });
+                input.value = '';
+                alert('Mensagem enviada com sucesso!');
+            }
+        })
+
+        socket.on('chat-message', (model) => {
+            var item = document.createElement('li');
+
+            item.style.backgroundColor = (model.nome == nome) ? 'gray' : 'red';
+            item.textContent = `${model.nome}: ` + model.msg;
+
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
         });
 
     </script>
